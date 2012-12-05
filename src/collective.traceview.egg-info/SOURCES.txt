@@ -1,0 +1,14 @@
+README.txt
+setup.cfg
+setup.py
+src/collective/__init__.py
+src/collective.traceview.egg-info/PKG-INFO
+src/collective.traceview.egg-info/SOURCES.txt
+src/collective.traceview.egg-info/dependency_links.txt
+src/collective.traceview.egg-info/entry_points.txt
+src/collective.traceview.egg-info/namespace_packages.txt
+src/collective.traceview.egg-info/not-zip-safe
+src/collective.traceview.egg-info/paster_plugins.txt
+src/collective.traceview.egg-info/requires.txt
+src/collective.traceview.egg-info/top_level.txt
+src/collective/traceview/__init__.py

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object>
+  <order manager="plone.portalfooter" skinname="*">>
+    <viewlet name="traceview.buttom" insert-after="*" />
+  </order>
+
+  <order manager="plone.htmlhead" skinname="*">
+    <viewlet name="traceview.top" insert-before="*" />
+  </order>
+
+</object>
