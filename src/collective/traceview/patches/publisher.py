@@ -5,6 +5,9 @@ from Products.PageTemplates.PageTemplate import PageTemplate
 
 
 def traverse_wrapper(meth):
+    """Extract som basic info about the object and view. traverse method
+    gives us access to the traversed object"""
+
     def extract(self, *args, **kwargs):
         try:
             object = meth(self, *args, **kwargs)
