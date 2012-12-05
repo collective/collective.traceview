@@ -57,8 +57,18 @@ def context_wrapper(meth):
             md = oboe.Metadata.fromString(xtr)
             ctx = oboe.Context(md)
             ctx.set_as_default()
+        elif oboe.Context.get_default().is_valid():
+            oboe.Context.clear_default()        
 
-        return meth(request, *args, **kwargs)
+        try:
+            res = meth(request, *args, **kwargs)
+            if oboe.Context.get_default().is_valid():
+                oboe.Context.clear_default()
+            return res
+
+        except:
+            raise
+
 
     return add_context
 
