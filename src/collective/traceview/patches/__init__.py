@@ -7,7 +7,7 @@ except:
     logger = logging.getLogger("Plone")
     logger.warn("Could not import oboeware, no tracing is done.")
     pass
-finally:
+else:
     #import httpserver
     import publisher
     import catalog
