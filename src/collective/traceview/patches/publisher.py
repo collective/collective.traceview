@@ -30,9 +30,10 @@ def traverse_wrapper(meth):
             # Z3 style views
             elif isinstance(object, BrowserView):
                 kv['Action'] = object.__name__
-                kv['Controller'] = object.context.meta_type
+                if hasattr(object.context, 'meta_type'):
+                    kv['Controller'] = object.context.meta_type
 
-            else:
+            if 'Controller' not in kv:
                 kv['Controller'] = 'Unknown'
 
             oboe.log('info', None, keys=kv, store_backtrace=False)
