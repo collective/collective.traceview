@@ -4,8 +4,10 @@ from zope.viewlet.interfaces import IViewlet
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 
-import oboe
-
+try:
+    import oboe
+except:
+    pass
 
 class TraceviewTopViewlet(BrowserView):
     implements(IViewlet)
@@ -23,8 +25,10 @@ class TraceviewTopViewlet(BrowserView):
 
     def render(self):
         """render the Traceview top snippet"""
-        return "<!-- traceview starttag -->" + oboe.rum_header()
-
+        try:
+            return "<!-- traceview starttag -->" + oboe.rum_header()
+        except:
+            return ""
 
 class TraceviewButtomViewlet(BrowserView):
     implements(IViewlet)
@@ -43,4 +47,7 @@ class TraceviewButtomViewlet(BrowserView):
     def render(self):
         """render the Traceview buttom snippet"""
 
-        return "<!-- traceview endtag -->" + oboe.rum_footer()
+        try:
+            return "<!-- traceview endtag -->" + oboe.rum_footer()
+        except:
+            return ""
