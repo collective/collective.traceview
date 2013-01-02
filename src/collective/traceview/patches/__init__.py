@@ -15,5 +15,6 @@ else:
     import zodb
     import memoize
     import viewletmanagers
+    import viewlets
     #import template
 
