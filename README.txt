@@ -53,7 +53,8 @@ How to install
         ...
         eggs =
           ...
-          eea.daviz
+          collective.traceview
+          oboe
 
   * Get package from Headnet sources (or create your own GitHub fork)
 
