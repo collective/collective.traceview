@@ -45,7 +45,7 @@ How to install
 
         auto-checkout = collective.traceview
 
-  * Add ``oboe`` to the list of eggs to install
+  * Add ``oboe`` and ``collective.traceview`` to the list of eggs to install
 
       ::
 
