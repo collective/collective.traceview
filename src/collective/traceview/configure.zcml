@@ -1,23 +1,21 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="collective.traceview">
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           i18n_domain="collective.traceview">
 
-  <five:registerPackage package="." initialize=".initialize" />
-  
- <browser:viewlet  
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <browser:viewlet
         name="traceview.buttom"
         manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
         class=".view.TraceviewButtomViewlet"
         layer="*"
-        permission="zope2.View" 
+        permission="zope2.View"
         />
 
-
- <browser:viewlet
+    <browser:viewlet
         name="traceview.top"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".view.TraceviewTopViewlet"
@@ -25,16 +23,12 @@
         permission="zope2.View"
         />
 
-
-
-	  <genericsetup:registerProfile
-	    name="default"
-	    title="Traceview RUM"
-	    directory="profiles/default"
-	    description="Installs Traceview Real User Monitoring instrumentation"
-	    provides="Products.GenericSetup.interfaces.EXTENSION"
-	  />
-
-
+    <genericsetup:registerProfile
+        name="default"
+        title="Traceview RUM"
+        directory="profiles/default"
+        description="Installs Traceview Real User Monitoring instrumentation"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
 </configure>

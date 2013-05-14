@@ -22,8 +22,30 @@ long time your site takes to render inside the browsers of the real users.
 Requirements
 ------------
 
-You need a Traceview account, Traceview installed on the Plone server. And then the 
+You need a Traceview account, Traceview installed on the Plone server. And then the
 Traceview Python oboe library must be installed with the same Python that runs Plone.
 
 collective.traceview has been tested with Plone 4.
+
+
+How to install Traceview Python oboe library
+--------------------------------------------
+
+* Update your buildout.cfg file:
+
+  * Add tracelytics pypi under ``find-links``
+
+      ::
+
+        find-links += http://pypi.tracelytics.com/oboe
+
+  * Add ``oboe`` to the list of eggs to install
+
+      ::
+
+        [instance]
+        ...
+        eggs =
+          ...
+          eea.daviz
 
