@@ -1,4 +1,3 @@
-xxx
 Traceview for Plone
 ===================
 
@@ -32,21 +31,21 @@ collective.traceview has been tested with Plone 4.
 How to install
 --------------
 
-* Update your buildout.cfg file:
+Update your ``buildout.cfg`` file:
 
-  * Add tracelytics pypi under ``find-links``
+* Add tracelytics pypi under ``find-links``
 
       ::
 
         find-links += http://pypi.tracelytics.com/oboe
 
-  * Add package in develop mode
+* Add package in develop mode
 
       ::
 
         auto-checkout = collective.traceview
 
-  * Add ``oboe`` and ``collective.traceview`` to the list of eggs to install
+* Add ``oboe`` and ``collective.traceview`` to the list of eggs to install
 
       ::
 
@@ -57,10 +56,14 @@ How to install
           collective.traceview
           oboe
 
-  * Get package from Headnet sources (or create your own GitHub fork)
+* Get package from Headnet sources (or create your own GitHub fork)
 
       ::
 
         [sources]
         ...
         collective.traceview = git https://github.com/headnet/collective.traceview.git pushurl=git@github.com:headnet/collective.traceview.git
+
+Re-run buildout, e.g. with:
+
+      ``$ ./bin/buildout``
