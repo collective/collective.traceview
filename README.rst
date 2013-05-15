@@ -33,12 +33,6 @@ How to install
 
 Update your ``buildout.cfg`` file:
 
-* Add tracelytics pypi under ``find-links``
-
-      ::
-
-        find-links += http://pypi.tracelytics.com/oboe
-
 * Add package in develop mode
 
       ::
