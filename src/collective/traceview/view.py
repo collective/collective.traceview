@@ -46,7 +46,6 @@ class TraceviewButtomViewlet(BrowserView):
 
     def render(self):
         """render the Traceview buttom snippet"""
-
         try:
             return "<!-- traceview endtag -->" + oboe.rum_footer()
         except:
