@@ -4,7 +4,7 @@ import os
 version = '1.0'
 
 long_description = (
-    open('README.txt').read()
+    open('README.rst').read()
     + '\n' +
     'Contributors\n'
     '============\n'
@@ -31,7 +31,7 @@ setup(name='collective.traceview',
       keywords='',
       author='Anton Stonor',
       author_email='anton@headnet.dk',
-      url='https://github.com/headnet/collective.traceview',
+      url='https://github.com/collective/collective.traceview',
       license='gpl',
       packages=find_packages('src'),
       package_dir={'': 'src'},
