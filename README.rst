@@ -50,13 +50,13 @@ Update your ``buildout.cfg`` file:
           collective.traceview
           oboe
 
-* Get package from Headnet sources (or create your own GitHub fork)
+* Get package from collective sources (or create your own GitHub fork)
 
       ::
 
         [sources]
         ...
-        collective.traceview = git https://github.com/headnet/collective.traceview.git pushurl=git@github.com:headnet/collective.traceview.git
+        collective.traceview = git https://github.com/collective/collective.traceview.git
 
 Re-run buildout, e.g. with:
 
