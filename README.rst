@@ -61,3 +61,4 @@ Update your ``buildout.cfg`` file:
 Re-run buildout, e.g. with:
 
       ``$ ./bin/buildout``
+

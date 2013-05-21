@@ -2,7 +2,7 @@ Changelog
 =========
 
 1.0-dev (unreleased)
---------------------
 
-- Package created using templer
-  []
+
+- Initial public development release
+  [bosim]
