@@ -33,6 +33,12 @@ How to install
 
 Update your ``buildout.cfg`` file:
 
+* Add tracelytics pypi under ``find-links``
+
+      ::
+
+        find-links += http://pypi.tracelytics.com/oboe
+
 * Add package in develop mode
 
       ::
@@ -57,6 +63,14 @@ Update your ``buildout.cfg`` file:
         [sources]
         ...
         collective.traceview = git https://github.com/collective/collective.traceview.git
+
+* Get ``oboe`` egg version 1.3.8, the latest one released on pypi (version 1.4.2) is not yet fully tested (RUM not working)
+
+      ::
+
+        [versions]
+        ...
+        oboe = 1.3.8
 
 Re-run buildout, e.g. with:
 
