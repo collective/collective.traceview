@@ -2,7 +2,10 @@ import oboe
 
 
 def extract_count(func, f_args, f_kwargs, res):
-    return {'Count': len(res)}
+    if res:
+        return {'Count': len(res)}
+    else:
+        return {'Count': 0}
 
 from Products.CMFPlone.CatalogTool import CatalogTool
 CatalogTool.orig_searchResults = CatalogTool.searchResults
