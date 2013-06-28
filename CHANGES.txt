@@ -1,8 +1,15 @@
 Changelog
 =========
 
-1.1-dev - (unreleased)
+1.2-dev - (unreleased)
 ----------------------
+* Fixed case when res is None under catalog.py
+  [alecghica]
+* Updade package version under CHANGES.txt
+  [alecghica]
+
+1.1 - (2013-06-18)
+------------------
 * Fixed CHANGES.txt for better formatting and to reflect latest release
   [alecghica]
 
