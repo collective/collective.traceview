@@ -5,3 +5,4 @@ Note:  place names and roles of the people who contribute to this package
 - Bob Slob, contributed monkey patches
 - Jane Main, wrote flibberty module
 - Bo Simonsen, misc changes
+- Alec Ghica, added documentation and various fixes
