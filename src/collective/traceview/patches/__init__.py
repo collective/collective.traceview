@@ -12,7 +12,7 @@ else:
     import publisher
     import catalog
     import transform
-    import zodb
+    import zodbpatch
     import memoize
     import viewletmanagers
     #import template
