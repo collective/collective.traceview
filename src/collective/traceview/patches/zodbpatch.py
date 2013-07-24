@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import oboe
 from ZODB.Connection import Connection
 from ZODB.utils import u64
@@ -25,6 +26,10 @@ def extract_obj_info(func, f_args, f_kwargs, res):
         kv['obj.id'] = obj.id
     if hasattr(obj, 'title'):
         kv['obj.title'] = obj.title
+        title = obj.title
+        if isinstance(title, unicode):
+            title = title.encode('utf-8', 'replace')
+        kv['obj.title'] = title
 
     return kv
 
