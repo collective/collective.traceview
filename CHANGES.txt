@@ -3,6 +3,12 @@ Changelog
 
 1.2-dev - (unreleased)
 ----------------------
+* Handle both Plone 3 and Plone 4
+  [stonor]
+* Fixed oboe and unicode
+  [stonor]
+* Fixed Zodb support to sends correct keys
+  [stonor]
 * Fixed case when res is None under catalog.py
   [alecghica]
 * Updade package version under CHANGES.txt
