@@ -27,6 +27,8 @@ Traceview Python oboe library must be installed with the same Python that runs P
 
 collective.traceview has been tested with Plone 4.
 
+System dependencies: liboboe and liboboe-devel (for CentOS) or liboboe-dev (for Debian/Ubuntu)
+
 
 How to install
 --------------
