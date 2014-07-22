@@ -7,7 +7,6 @@ Traceview times the full request from the browser through frontend servers to
 application servers. collective.traceview gives you insight into Zope/Plone
 internals and adds these layers to Traceview:
 
- * Zope http server
  * Zope publisher
  * ZODB
  * Portal Transforms
@@ -78,3 +77,32 @@ Re-run buildout, e.g. with:
 
       ``$ ./bin/buildout``
 
+
+Plone tracing (NEW)
+-------------------
+
+Usually the X-Trace header is generated from a front-end webserver, typically apache. But
+in some cases there is no such front-end webserver, so nowhere to start the trace. We
+did now add the possibility to get Plone to start the tracing. Just install the product
+in the usual way as described above and set the following environment variables.
+
+* ``TRACEVIEW_IGNORE_CONTENT_TYPES=text/css;application/x-javascript;application/javascript;image/jpeg;image/png``
+
+  Tells traceview to ignore specific content types seperated by semicolon.
+
+* ``TRACEVIEW_IGNORE_FOUR_OH_FOUR=1``
+
+  Tells traceview not to record 404 pages.
+
+* ``TRACEVIEW_PLONE_TRACING=1``
+
+  Tells Plone to do the tracing, do not set this if you have oboe installed on apache in
+  the front end.
+
+* ``TRACEVIEW_SAMPLE_RATE=1.0``
+
+  The sample rate, 1.0 means all requests, 0.0 means no requests.
+
+* ``TRACEVIEW_TRACING_MODE=always``
+
+  Tracing mode, always means that we will trace requests, none means no requests to be traced.
