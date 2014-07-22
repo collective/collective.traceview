@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3 - (Unreleased)
+------------------
+* Added initial plone tracing instrumentation
+  [bosim]
+
 1.2 - (2013-12-29)
 ------------------
 * Handle both Plone 3 and Plone 4
