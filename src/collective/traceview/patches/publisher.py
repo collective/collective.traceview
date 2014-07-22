@@ -85,7 +85,7 @@ def context_wrapper(meth):
             res = meth(request, *args, **kwargs)
 
             if plone_tracing and ctx.is_valid(): 
-                content_type = res.headers.get('content-type')
+                content_type = res.headers.get('content-type', '')
 
                 if content_type.find(';') > 0:
                     content_type = content_type[:content_type.find(';')]
