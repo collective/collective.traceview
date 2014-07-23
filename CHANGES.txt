@@ -5,6 +5,9 @@ Changelog
 ------------------
 * Added initial plone tracing instrumentation
   [bosim]
+* Initial implementation of zserver (medusa) http server 
+  patch
+  [bosim]
 
 1.2 - (2013-12-29)
 ------------------

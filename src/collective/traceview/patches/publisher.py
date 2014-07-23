@@ -1,16 +1,8 @@
-import os
-import sys
 import oboe
+import os
 
 from zope.publisher.browser import BrowserView
 from Products.PageTemplates.PageTemplate import PageTemplate
-
-plone_tracing = os.environ.get('TRACEVIEW_PLONE_TRACING', False)
-ignore_content_types = os.environ.get('TRACEVIEW_IGNORE_CONTENT_TYPES', '').split(';')
-ignore_four_oh_four = os.environ.get('TRACEVIEW_IGNORE_FOUR_OH_FOUR', False)
-
-oboe.config['tracing_mode'] = os.environ.get('TRACEVIEW_TRACING_MODE', 'none')
-oboe.config['sample_rate'] = float(os.environ.get('TRACEVIEW_SAMPLE_RATE', '0.3'))
 
 
 def traverse_wrapper(meth):
@@ -63,7 +55,6 @@ def context_wrapper(meth):
     """Wraps the publish method in the current oboe context. """
 
     def add_context(request, *args, **kwargs):
-        ev = None
         ctx = None
 
         xtr = request.get_header('X-TRACE')
@@ -71,30 +62,9 @@ def context_wrapper(meth):
             md = oboe.Metadata.fromString(xtr)
             ctx = oboe.Context(md)
             ctx.set_as_default()
-        elif plone_tracing:
-            ctx, ev = oboe.Context.start_trace('plone')
-            if ctx.is_valid():
-                ev.add_info("URL", 'http://' + request['HTTP_HOST'] + request['PATH_INFO'])
-                ev.add_info("Method", request['REQUEST_METHOD'])
-                ev.add_info("HTTP-Host", request['HTTP_HOST'])
-                ev.add_edge(oboe.Context.get_default())
-                ctx.report(ev)
-                ctx.set_as_default()
 
         try:
             res = meth(request, *args, **kwargs)
-
-            if plone_tracing and ctx.is_valid(): 
-                content_type = res.headers.get('content-type', '')
-
-                if content_type.find(';') > 0:
-                    content_type = content_type[:content_type.find(';')]
-
-                if content_type not in ignore_content_types and not (ignore_four_oh_four and res.status == 404):
-                    ev = ctx.create_event('exit', 'plone')
-                    ev.add_info("Status", res.status)
-                    ev.add_edge(oboe.Context.get_default())
-                    ctx.report(ev)
 
             if oboe.Context.get_default().is_valid():
                 oboe.Context.clear_default()
