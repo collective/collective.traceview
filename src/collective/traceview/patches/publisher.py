@@ -1,4 +1,5 @@
 import oboe
+import os
 
 from zope.publisher.browser import BrowserView
 from Products.PageTemplates.PageTemplate import PageTemplate
@@ -54,7 +55,6 @@ def context_wrapper(meth):
     """Wraps the publish method in the current oboe context. """
 
     def add_context(request, *args, **kwargs):
-        ev = None
         ctx = None
 
         xtr = request.get_header('X-TRACE')
@@ -65,18 +65,6 @@ def context_wrapper(meth):
 
         try:
             res = meth(request, *args, **kwargs)
-
-            """if plone_tracing and ctx.is_valid(): 
-                content_type = res.headers.get('content-type', '')
-
-                if content_type.find(';') > 0:
-                    content_type = content_type[:content_type.find(';')]
-
-                if content_type not in ignore_content_types and not (ignore_four_oh_four and res.status == 404):
-                    ev = ctx.create_event('exit', 'plone')
-                    ev.add_info("Status", res.status)
-                    ev.add_edge(oboe.Context.get_default())
-                    ctx.report(ev)"""
 
             if oboe.Context.get_default().is_valid():
                 oboe.Context.clear_default()
