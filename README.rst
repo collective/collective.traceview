@@ -7,6 +7,7 @@ Traceview times the full request from the browser through frontend servers to
 application servers. collective.traceview gives you insight into Zope/Plone
 internals and adds these layers to Traceview:
 
+ * Zope HTTP Server
  * Zope publisher
  * ZODB
  * Portal Transforms
@@ -86,9 +87,9 @@ in some cases there is no such front-end webserver, so nowhere to start the trac
 did now add the possibility to get Plone to start the tracing. Just install the product
 in the usual way as described above and set the following environment variables.
 
-* ``TRACEVIEW_IGNORE_CONTENT_TYPES=text/css;application/x-javascript;application/javascript;image/jpeg;image/png``
+* ``TRACEVIEW_IGNORE_EXTENSIONS js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
 
-  Tells traceview to ignore specific content types seperated by semicolon.
+  Tells traceview not to trace urls with the following extensions.
 
 * ``TRACEVIEW_IGNORE_FOUR_OH_FOUR=1``
 
