@@ -87,7 +87,7 @@ in some cases there is no such front-end webserver, so nowhere to start the trac
 did now add the possibility to get Plone to start the tracing. Just install the product
 in the usual way as described above and set the following environment variables.
 
-* ``TRACEVIEW_IGNORE_EXTENSIONS js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
+* ``TRACEVIEW_IGNORE_EXTENSIONS=js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
 
   Tells traceview not to trace urls with the following extensions.
 
