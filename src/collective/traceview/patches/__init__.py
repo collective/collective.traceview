@@ -21,7 +21,15 @@ else:
     import zodbpatch
     import memoize
     import viewletmanagers
-    #import template
+
+    try:
+        import chameleonpatch
+    except:
+        import logging
+        logger = logging.getLogger("Plone")
+        logger.warn("Could not patch chameleon, if it is installed there is a problem")
+        pass
+
     if is_recent_python:
         import transform
     

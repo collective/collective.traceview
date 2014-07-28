@@ -13,6 +13,7 @@ internals and adds these layers to Traceview:
  * Portal Transforms
  * Outbound calls to e.g. webservices
  * Portal Catalog searches
+ * Chameleon ZPT engine
 
 It also adds tags to the HTML header and footer to instrument Traceview Real User
 Monitoring (RUM), so you'll get metrics about user network connectivity and how
