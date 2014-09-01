@@ -3,7 +3,7 @@ if sys.version_info >= (2, 6):
     is_recent_python = True
 else:
     is_recent_python = False
-    
+
 try:
     import oboeexception
     from oboeware import loader
@@ -24,13 +24,11 @@ else:
 
     try:
         import chameleonpatch
-    except:
+    except ImportError:
         import logging
         logger = logging.getLogger("Plone")
-        logger.warn("Could not patch chameleon, if it is installed there is a problem")
+        logger.warn("Could not patch Chameleon, if it is installed there is a problem")
         pass
 
     if is_recent_python:
         import transform
-    
-

@@ -68,7 +68,7 @@ def context_wrapper(meth):
 
             if oboe.Context.get_default().is_valid():
                 oboe.Context.clear_default()
-               
+
             return res
 
         except:
