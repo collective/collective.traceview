@@ -1,7 +1,16 @@
+===================
 Traceview for Plone
 ===================
 
 The collective.traceview package adds support for Traceview (aka Tracelytics) to Plone.
+
+Contents
+========
+
+.. contents::
+
+Introduction
+============
 
 Traceview times the full request from the browser through frontend servers to
 application servers. collective.traceview gives you insight into Zope/Plone
@@ -19,9 +28,8 @@ It also adds tags to the HTML header and footer to instrument Traceview Real Use
 Monitoring (RUM), so you'll get metrics about user network connectivity and how
 long time your site takes to render inside the browsers of the real users.
 
-
 Requirements
-------------
+============
 
 You need a Traceview account, Traceview installed on the Plone server. And then the
 Traceview Python oboe library must be installed with the same Python that runs Plone.
@@ -32,7 +40,7 @@ System dependencies: liboboe and liboboe-devel (for CentOS) or liboboe-dev (for 
 
 
 How to install
---------------
+==============
 
 Update your ``buildout.cfg`` file:
 
@@ -81,7 +89,7 @@ Re-run buildout, e.g. with:
 
 
 Plone tracing (NEW)
--------------------
+===================
 
 Usually the X-Trace header is generated from a front-end webserver, typically apache. But
 in some cases there is no such front-end webserver, so nowhere to start the trace. We

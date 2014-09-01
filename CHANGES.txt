@@ -1,19 +1,21 @@
 Changelog
 =========
 
-1.4 (unreleased)
-----------------
-
-- Added initial support for Chameleon
+1.4.dev0 (unreleased)
+---------------------
+* Added initial support for Chameleon
   [bosim]
-
+* Small markup fixes to CHANGES.txt and README.rst files
+  [alecghica]
+* Fixed long_description under setup.py to make changelog appear under PyPi
+  package description page
+  [alecghica]
 
 1.3 (2014-07-24)
 ----------------
 * Added initial plone tracing instrumentation
   [bosim]
-* Initial implementation of zserver (medusa) http server 
-  patch
+* Initial implementation of zserver (medusa) http server patch
   [bosim]
 
 1.2 - (2013-12-29)
