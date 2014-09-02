@@ -26,7 +26,7 @@ def handle_request_wrapper(meth):
         elif plone_tracing:
             ctx, ev = oboe.Context.start_trace('zserver_http')
             if ctx.is_valid():
-                host = request.get_header('Host')
+                host = request.get_header('Host', '')
                 uri = request.uri
                 command = request.command.upper()
 
