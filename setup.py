@@ -8,7 +8,8 @@ long_description = open('README.rst').read()
 setup(name='collective.traceview',
       version=version,
       description="This package adds support for TraceView performance instrumentation in Plone",
-      long_description=long_description,
+      long_description=open("README.rst").read() + "\n" +
+                       open("CHANGES.txt").read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -18,12 +19,13 @@ setup(name='collective.traceview',
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.6",
         "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         ],
-      keywords='',
+      keywords='collective traceview tracelytics',
       author='Anton Stonor',
       author_email='anton@headnet.dk',
       url='https://github.com/collective/collective.traceview',
-      license='gpl',
+      license='GPL',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       namespace_packages=['collective', ],

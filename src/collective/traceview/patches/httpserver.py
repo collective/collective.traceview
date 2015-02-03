@@ -74,7 +74,7 @@ def close_response_wrapper(meth):
                     ev.add_edge(oboe.Context.get_default())
                     ctx.report(ev)
 
-            oboe.Context.clear_default()            
+            oboe.Context.clear_default()
 
         return meth(self)
 

@@ -1,7 +1,16 @@
+===================
 Traceview for Plone
 ===================
 
 The collective.traceview package adds support for Traceview (aka Tracelytics) to Plone.
+
+Contents
+========
+
+.. contents::
+
+Introduction
+============
 
 Traceview times the full request from the browser through frontend servers to
 application servers. collective.traceview gives you insight into Zope/Plone
@@ -19,9 +28,8 @@ It also adds tags to the HTML header and footer to instrument Traceview Real Use
 Monitoring (RUM), so you'll get metrics about user network connectivity and how
 long time your site takes to render inside the browsers of the real users.
 
-
 Requirements
-------------
+============
 
 You need a Traceview account, Traceview installed on the Plone server. And then the
 Traceview Python oboe library must be installed with the same Python that runs Plone.
@@ -32,7 +40,7 @@ System dependencies: liboboe and liboboe-devel (for CentOS) or liboboe-dev (for 
 
 
 How to install
---------------
+==============
 
 Update your ``buildout.cfg`` file:
 
@@ -53,6 +61,7 @@ Update your ``buildout.cfg`` file:
       ::
 
         [instance]
+        recipe = plone.recipe.zope2instance
         ...
         eggs =
           ...
@@ -81,30 +90,47 @@ Re-run buildout, e.g. with:
 
 
 Plone tracing (NEW)
--------------------
+===================
 
 Usually the X-Trace header is generated from a front-end webserver, typically apache. But
 in some cases there is no such front-end webserver, so nowhere to start the trace. We
 did now add the possibility to get Plone to start the tracing. Just install the product
-in the usual way as described above and set the following environment variables.
+in the usual way as described above and set the following environment variables. See example below:
 
-* ``TRACEVIEW_IGNORE_EXTENSIONS=js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
+      ::
 
-  Tells traceview not to trace urls with the following extensions.
+        [instance]
+        recipe = plone.recipe.zope2instance
+        ...
+        environment-vars =
+          ...
+          TRACEVIEW_IGNORE_EXTENSIONS js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf
+          TRACEVIEW_IGNORE_FOUR_OH_FOUR 1
+          TRACEVIEW_PLONE_TRACING 1
+          TRACEVIEW_SAMPLE_RATE 1.0
+          TRACEVIEW_TRACING_MODE always
 
-* ``TRACEVIEW_IGNORE_FOUR_OH_FOUR=1``
+**TRACEVIEW_IGNORE_EXTENSIONS** tells Traceview not to trace urls with the following extensions,
+default value no extension is defined.
 
-  Tells traceview not to record 404 pages.
+      ``TRACEVIEW_IGNORE_EXTENSIONS=js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
 
-* ``TRACEVIEW_PLONE_TRACING=1``
+**TRACEVIEW_IGNORE_FOUR_OH_FOUR** tells Traceview not to record 404 pages, default value is *0*.
 
-  Tells Plone to do the tracing, do not set this if you have oboe installed on apache in
-  the front end.
+      ``TRACEVIEW_IGNORE_FOUR_OH_FOUR=1``
 
-* ``TRACEVIEW_SAMPLE_RATE=1.0``
+**TRACEVIEW_PLONE_TRACING** tells Plone to do the tracing, do not set this if you have oboe
+installed on apache in the front end, default value is *0*.
 
-  The sample rate, 1.0 means all requests, 0.0 means no requests.
+      ``TRACEVIEW_PLONE_TRACING=1``
 
-* ``TRACEVIEW_TRACING_MODE=always``
+**TRACEVIEW_SAMPLE_RATE** the sample rate, *1.0* means all requests, *0.0* means no requests,
+default value is *0.3*.
 
-  Tracing mode, always means that we will trace requests, none means no requests to be traced.
+      ``TRACEVIEW_SAMPLE_RATE=1.0``
+
+**TRACEVIEW_TRACING_MODE** tracing mode, *always* means that we will trace requests, none means no requests to be traced,
+default value is *none*.
+
+      ``TRACEVIEW_TRACING_MODE=always``
+
