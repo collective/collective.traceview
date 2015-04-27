@@ -27,7 +27,7 @@ def handle_request_wrapper(meth):
             ctx, ev = oboe.Context.start_trace('zserver_http')
             if ctx.is_valid():
                 host = request.get_header('Host') or ''
-                uri = request.uri
+                uri = request.uri or ''
                 command = request.command.upper()
 
                 ev.add_info("URL", 'http://' + host + uri)
@@ -64,7 +64,8 @@ def close_response_wrapper(meth):
                 if ignore_four_oh_four and self._request.reply_code == 404:
                     send_trace = False
 
-                extension = self._request.uri.split('.')[-1]
+                uri = self._request.uri or ''
+                extension = uri.split('.')[-1]
                 if extension in ignore_extensions:
                     send_trace = False
 

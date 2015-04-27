@@ -12,6 +12,8 @@ Changelog
   [alecghica]
 * Updated documentation.
   [alecghica]
+* Fix bug in httpserver patch when request.uri is None
+  [tiberiuichim]
 
 1.3 (2014-07-24)
 ----------------
