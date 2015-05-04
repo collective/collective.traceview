@@ -1,8 +1,21 @@
 import oboe
 import os
+import socket
 
+from App.config import getConfiguration
 from zope.publisher.browser import BrowserView
 from Products.PageTemplates.PageTemplate import PageTemplate
+
+
+def get_info():
+    conf = getConfiguration()
+    procname = os.path.basename(conf.instancehome)
+    hostname = os.getenv("HOSTNAME") or socket.gethostname()
+    return {'procname': procname, 'hostname': hostname}
+
+SYSINFO = get_info()
+
+detailed_partition = os.environ.get('TRACEVIEW_DETAILED_PARTITION', False)
 
 
 def traverse_wrapper(meth):
@@ -10,6 +23,7 @@ def traverse_wrapper(meth):
     gives us access to the traversed object"""
 
     def extract(self, *args, **kwargs):
+
         try:
             object = meth(self, *args, **kwargs)
             user = self.get('AUTHENTICATED_USER')
@@ -18,6 +32,11 @@ def traverse_wrapper(meth):
                 partition = 'Anonymous'
             else:
                 partition = 'Authenticated'
+
+            if detailed_partition:
+                partition = "%s %s %s" % (partition,
+                                          SYSINFO['hostname'],
+                                          SYSINFO['procname'])
 
             kv = {'Partition': partition, 'Class': object.__class__}
 

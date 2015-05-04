@@ -14,6 +14,7 @@ ignore_four_oh_four = os.environ.get('TRACEVIEW_IGNORE_FOUR_OH_FOUR', False)
 oboe.config['tracing_mode'] = os.environ.get('TRACEVIEW_TRACING_MODE', 'none')
 oboe.config['sample_rate'] = float(os.environ.get('TRACEVIEW_SAMPLE_RATE', '0.3'))
 
+
 def handle_request_wrapper(meth):
     def start_trace(self, request):
         ev = None
