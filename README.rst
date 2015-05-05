@@ -129,6 +129,8 @@ installed on apache in the front end, default value is *0*.
 name will also include hostname and zope instance name. The default is to only partition for
 Anonymous and Authenticated trafic.
 
+      ``TRACEVIEW_DETAILED_PARTITION=1``
+
 **TRACEVIEW_SAMPLE_RATE** the sample rate, *1.0* means all requests, *0.0* means no requests,
 default value is *0.3*.
 
