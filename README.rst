@@ -107,6 +107,7 @@ in the usual way as described above and set the following environment variables.
           TRACEVIEW_IGNORE_EXTENSIONS js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf
           TRACEVIEW_IGNORE_FOUR_OH_FOUR 1
           TRACEVIEW_PLONE_TRACING 1
+          TRACEVIEW_DETAILED_PARTITION 1
           TRACEVIEW_SAMPLE_RATE 1.0
           TRACEVIEW_TRACING_MODE always
 
@@ -124,6 +125,10 @@ installed on apache in the front end, default value is *0*.
 
       ``TRACEVIEW_PLONE_TRACING=1``
 
+**TRACEVIEW_DETAILED_PARTITION** will split trafic into detailed partition, where the partition
+name will also include hostname and zope instance name. The default is to only partition for
+Anonymous and Authenticated trafic.
+
 **TRACEVIEW_SAMPLE_RATE** the sample rate, *1.0* means all requests, *0.0* means no requests,
 default value is *0.3*.
 
@@ -133,4 +138,3 @@ default value is *0.3*.
 default value is *none*.
 
       ``TRACEVIEW_TRACING_MODE=always``
-
