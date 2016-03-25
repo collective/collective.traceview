@@ -1,8 +1,8 @@
 ===================
-Traceview for Plone
+TraceView for Plone
 ===================
 
-The collective.traceview package adds support for Traceview (aka Tracelytics) to Plone.
+The *collective.traceview* package adds support for [TraceView](http://docs.appneta.com/platform-and-component-support#python-frameworks), aka Tracelytics, to Plone. The full [TraceView documentation](http://docs.appneta.com/traceview) can be read for more information.
 
 Contents
 ========
@@ -12,9 +12,9 @@ Contents
 Introduction
 ============
 
-Traceview times the full request from the browser through frontend servers to
+TraceView times the full request from the browser through frontend servers to
 application servers. collective.traceview gives you insight into Zope/Plone
-internals and adds these layers to Traceview:
+internals and adds these layers to TraceView:
 
  * Zope HTTP Server
  * Zope publisher
@@ -24,15 +24,15 @@ internals and adds these layers to Traceview:
  * Portal Catalog searches
  * Chameleon ZPT engine
 
-It also adds tags to the HTML header and footer to instrument Traceview Real User
+It also adds tags to the HTML header and footer to instrument TraceView Real User
 Monitoring (RUM), so you'll get metrics about user network connectivity and how
 long time your site takes to render inside the browsers of the real users.
 
 Requirements
 ============
 
-You need a Traceview account, Traceview installed on the Plone server. And then the
-Traceview Python oboe library must be installed with the same Python that runs Plone.
+You need a TraceView account, TraceView installed on the Plone server. And then the
+TraceView Python oboe library must be installed with the same Python that runs Plone.
 
 collective.traceview has been tested with Plone 4.
 
@@ -111,12 +111,12 @@ in the usual way as described above and set the following environment variables.
           TRACEVIEW_SAMPLE_RATE 1.0
           TRACEVIEW_TRACING_MODE always
 
-**TRACEVIEW_IGNORE_EXTENSIONS** tells Traceview not to trace urls with the following extensions,
+**TRACEVIEW_IGNORE_EXTENSIONS** tells TraceView not to trace urls with the following extensions,
 default value no extension is defined.
 
       ``TRACEVIEW_IGNORE_EXTENSIONS=js;css;png;jpeg;jpg;gif;pjpeg;x-png;pdf``
 
-**TRACEVIEW_IGNORE_FOUR_OH_FOUR** tells Traceview not to record 404 pages, default value is *0*.
+**TRACEVIEW_IGNORE_FOUR_OH_FOUR** tells TraceView not to record 404 pages, default value is *0*.
 
       ``TRACEVIEW_IGNORE_FOUR_OH_FOUR=1``
 
