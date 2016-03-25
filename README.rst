@@ -2,7 +2,7 @@
 TraceView for Plone
 ===================
 
-The *collective.traceview* package adds support for [TraceView](http://docs.appneta.com/platform-and-component-support#python-frameworks), aka Tracelytics, to Plone. The full [TraceView documentation](http://docs.appneta.com/traceview) can be read for more information.
+The *collective.traceview* package adds support for `TraceView`_, aka Tracelytics, to Plone. The full `TraceView documentation`_ can be read for more information.
 
 Contents
 ========
@@ -140,3 +140,6 @@ default value is *0.3*.
 default value is *none*.
 
       ``TRACEVIEW_TRACING_MODE=always``
+
+.. _TraceView: http://docs.appneta.com/platform-and-component-support#python-frameworks
+.. _TraceView documentation: http://docs.appneta.com/traceview
