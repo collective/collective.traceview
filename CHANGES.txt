@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.4.dev0 (unreleased)
----------------------
+1.4 (2016-04-13)
+----------------
 * Added initial support for Chameleon
   [bosim]
 * Small markup fixes to CHANGES.txt and README.rst files
@@ -14,7 +14,7 @@ Changelog
   [alecghica]
 * Fix bug in httpserver patch when request.uri is None
   [tiberiuichim]
-* Added TRACEVIEW_DETAILED_PARTITION to split trafic in partitions 
+* Added TRACEVIEW_DETAILED_PARTITION to split trafic in partitions
   that include hostname and zope instance name
   [tiberiuichim]
 
