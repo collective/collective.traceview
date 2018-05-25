@@ -84,10 +84,11 @@ Update your ``buildout.cfg`` file:
         ...
         oboe = 1.3.8
 
-Re-run buildout, e.g. with:
+* Re-run buildout, e.g. with:
 
       ``$ ./bin/buildout``
 
+* Within ``Plone > Control Panel > Add-ons`` install `Traceview RUM`
 
 Plone tracing (NEW)
 ===================

@@ -3,6 +3,9 @@ Changelog
 
 1.5.dev0 (unreleased)
 ---------------------
+* Cleanup unnecessary viewlets.xml from profile and register viewlets
+  on TraceView browser layer to cleanly install / uninstall Plone-Addon
+  [avoinea]
 
 1.4 (2016-04-13)
 ----------------

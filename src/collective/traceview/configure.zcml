@@ -11,7 +11,7 @@
         name="traceview.buttom"
         manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
         class=".view.TraceviewButtomViewlet"
-        layer="*"
+        layer="collective.traceview.interfaces.ITraceviewLayer"
         permission="zope2.View"
         />
 
@@ -19,7 +19,7 @@
         name="traceview.top"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".view.TraceviewTopViewlet"
-        layer="*"
+        layer="collective.traceview.interfaces.ITraceviewLayer"
         permission="zope2.View"
         />
 

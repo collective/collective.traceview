@@ -4,3 +4,4 @@ Note:  place names and roles of the people who contribute to this package
 - Anton Stonor, Original Author
 - Bo Simonsen, misc changes
 - Alec Ghica, added documentation and various fixes
+- Alin Voinea, various fixes
